@@ -39,7 +39,7 @@ namespace Mistaken.BetterSCP.SCP173
             if (!ev.IsAllowed)
                 return;
 
-            if (this.scp173Tantrums.Count > PluginHandler.Instance.Config.TantrumLimit)
+            if (this.scp173Tantrums.Count >= PluginHandler.Instance.Config.TantrumLimit)
                 NetworkServer.Destroy(this.scp173Tantrums.Dequeue());
 
             this.scp173Tantrums.Enqueue(ev.GameObject);
